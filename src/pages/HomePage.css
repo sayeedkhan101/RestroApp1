@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'cursive';
+    src: url(../components/fonts/AlexBrush-Regular.ttf);
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#homepage-container {
+    overflow-y: auto;
+    height: 100vh; /* Make sure the page takes up full height */
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Home Container */
+.home-container {
+    width: 100%; /* Ensure it covers the full width of the browser */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    
+}
+
+/* Header Section */
+.header-section {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000; /* Ensure the header is above the video */
+    transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease;
+  }
+  
+.header-section.scrolled {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8); /* Darken the background on scroll */
+    padding: 10px 20px;
+    border-bottom: 2px solid #e22d39;
+}
+
+/* Content section */
+.content {
+    transition: filter 0.3s ease-in-out; /* Smooth transition for the blur effect */
+}
+
+/* Apply blur effect to the rest of the page content when the header is scrolled */
+.header-section.scrolled ~ .content {
+    filter: blur(3px); /* Apply blur effect */
+}
+  
+  
+/* Navigation styles */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font: bold 1.2rem sans-serif;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .nav ul li {
+    padding: 0 .75em .25em;
+    margin-right: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  /* Initial state for nav links (no blur) */
+  .nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* Zoom effect on hover */
+  .nav ul li:hover {
+    transform: scale(1.2); /* Zoom effect */
+  }
+  
+  /* Blur and dim only the unhovered items when one is hovered */
+  .nav:hover ul li:not(:hover) {
+    filter: blur(2px); /* Blurring the unhovered nav items */
+    opacity: 0.5; /* Fading out the unhovered nav items */
+  }
+  
+  /* Hover color effect */
+  .nav ul li:hover a {
+    color: #e22d39; /* Change the hovered text to red */
+  }
+  
+  .nav ul li:not(:hover) a {
+    color: white; /* Keep unhovered text white */
+  }
+  
+  
+
+  
+
+
+
+@media (max-width: 768px) {
+    .header-section {
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+    
+    .nav li {
+        margin-right: 40px; /* Adjust margins for smaller screens */
+    }
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Prevent content spill */
+}
+
+.hero-overlay {
+    position: absolute;
+    font-family: 'cursive';
+    font-size: 40px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Ensure text is above the video */
+    color: white;
+    padding: 20px;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;  /* Ensure video is below the text */
+}
+
+.highlight {
+    color: #9c141c; /* You can change this to any color you prefer */
+    font-weight: bold; /* Optional: make it bold */
+}
+
+
+/* About Section */
+.about-section {
+    padding: 40px;
+    background-color: transparent; /* Remove background */
+    color: #801818;
+    font-family: 'cursive';
+    font-size: 24px;
+}
+
+.about-section p {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 24px;
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 300px;
+    gap: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.left-image {
+    width: 70%; /* adjust the width as needed */
+    border-radius: 10px;
+}
+
+.top-image {
+    width: 100%; /* make the images take full width */
+    height: 50%; /* adjust the height as needed */
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.bottom-image {
+    width: 100%; /* make the images take full width */
+    height: 40%; /* adjust the height as needed */
+    border-radius: 10px;
+}
+
+/* Features Section */
+.features-section {
+    padding: 40px;
+    background-color: transparent; /* Remove background */
+}
+
+.hookah-lounge {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.hookah-lounge h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #9c141c;
+}
+
+.hookah-lounge p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #797878;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-overlay {
+        font-size: 30px; /* Scale font size down */
+    }
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}

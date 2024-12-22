@@ -1,0 +1,198 @@
+/*menu page css*/
+
+
+#menupage-container {
+    overflow-y: auto;
+    height: 100vh; /* Make sure the page takes up full height */
+  }
+
+.menu-page {
+    text-align: center;
+    background-color: black;
+  }
+  
+  .menu-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin: 197px;
+    color: aliceblue;
+    font-family: 'cursive';
+  }
+  
+  .menu-section {
+    margin-bottom: 60px;
+    position: relative;
+  }
+  
+  @keyframes appear-image{
+    from{
+      opacity: 0;
+      scale:0.5;
+    } 
+    to{
+      opacity: 1;
+      scale:1;
+    }
+  }
+
+  @keyframes appear-menuitems_X{
+    from{
+      opacity: 0;
+      transform: translateX(-1000px);
+    } 
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes appear-menuitems_X-{
+    from{
+      opacity: 0;
+      transform: translateX(1000px);
+    } 
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  #app-anime,#sides-anime,#bev-anime {
+    animation: appear-menuitems_X;
+    animation-timeline : view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  #main-anime,#des-anime,#hok-anime{
+    animation: appear-menuitems_X-;
+    animation-timeline : view();
+    animation-range: entry 0% cover 40%;
+  }
+
+
+
+  .menu-genre {
+    position:relative;
+    animation: appear-image linear;
+    animation-timeline : view();
+    animation-range: entry 0% cover 40%;
+  }
+  
+  .menu-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+  
+  .menu-genre-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+  }
+  
+  .menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: aliceblue;
+  }
+  
+  .menu-items li {
+    margin: 10px 0;
+  }
+
+  /* Timing Section */
+/* Timing Section */
+.timing-section {
+    text-align: left;
+    background-color: #000000;
+    padding: 30px 20px;
+    
+}
+
+.timing-details{
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.timing-details h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #9c141c;
+    margin-bottom: 15px;
+}
+
+.timing-details p {
+    font-size: 18px;
+    color: aliceblue;
+    margin: 5px 0;
+}
+
+.timing-details p:nth-child(2) {
+    font-weight: bold;
+    font-size: 20px;
+    color: #9c141c; /* Accent color for 'OUR HOURS' */
+}
+
+.timing-details p:nth-child(3),
+.timing-details p:nth-child(4) {
+    font-style: italic;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.timing-details p:last-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+/* Copyright Section */
+/* Footer Section */
+.footer-section {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #444;
+    margin-top: 30px;
+    position: relative; /* Ensures it stays at the bottom of the content */
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-section:hover .footer-text {
+    color: #e0e0e0; /* Slight color change on hover */
+}
+
+.footer-text::before {
+    content: "\00A9 "; /* Adds copyright symbol */
+}
+
+/* Responsive Footer Styling */
+@media (max-width: 768px) {
+    .footer-text {
+        font-size: 14px; /* Smaller text on mobile */
+    }
+}
+
+
+  
